@@ -1,0 +1,67 @@
+{% extends 'collectApp/base.html' %}
+
+{% block main %}
+<br><br>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+					你好，亲爱的用户!
+				</h1>
+				<p>
+					这是一个基于渗透测试的信息收集系统，在该系统中，您可以方便的输入IP地址或域名，进行对目标的信息收集，其中包括目录扫描、网站类型识别、端口扫描、子域名查询等。
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" href="{% url 'collectApp:listdetail' %}">了解更多</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<h2>
+				目录扫描
+			</h2>
+			<p style="text-indent:2em">
+				网站目录是指网站为了方便浏览者或者管理者好区分而做的分类。网站的目录是网站的基本结构之一。一个网站的目录分类的好对整个网站的浏览有很大的帮助。对网站目录进行扫描，可以发现网站潜在的危险。
+			</p>
+			<p>
+				<a class="btn" href="{% url 'collectApp:listdetail' %}">查看详情 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				网站类型识别(CMS)
+			</h2>
+			<p style="text-indent:2em">
+				CMS是Content Management System的缩写，意为"内容管理系统"。CMS具有许多基于模板的优秀设计，可以减少开发的成本。CMS的功能并不只限于文本处理，它也可以处理图片、Flash动画、声像流、图像甚至电子邮件档案。
+			</p>
+			<p>
+				<a class="btn" href="{% url 'collectApp:cmsdetail' %}">查看详情 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				端口扫描
+			</h2>
+			<p style="text-indent:2em">
+				"端口"是英文port的意译，可以认为是设备与外界通讯交流的出口。端口可分为虚拟端口和物理端口，其中虚拟端口指计算机内部或交换机路由器内的端口，不可见。例如计算机中的80端口、21端口、23端口等。在不同的端口上运行着不同的端口。
+			</p>
+			<p>
+				<a class="btn" href="{% url 'collectApp:portdetail' %}">查看详情 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				子域名查询
+			</h2>
+			<p style="text-indent:2em">
+				子域名（或子域；英语：Subdomain）是在域名系统等级中，属于更高一层域的域。比如，mail.example.com和calendar.example.com是example.com的两个子域，而example.com则是顶级域.com的子域。
+			</p>
+			<p>
+				<a class="btn" href="{% url 'collectApp:subdomindetail' %}">查看详情 »</a>
+			</p>
+		</div>
+	</div>
+	{% endblock %}

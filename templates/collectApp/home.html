@@ -1,0 +1,73 @@
+{% extends 'collectApp/base.html' %}
+{% load static from staticfiles %}
+{% block main %}
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <div class="page-header">
+        <h1>在渗透测试中，<small>信息收集能力的差距，不明显，也最明显。</small></h1>
+      </div>
+      <div class="jumbotron">
+        <h1>
+          信息收集
+        </h1>
+        <p class='lead' style="text-indent:2em">
+          渗透测试是一种通过模拟恶意攻击者的技术与方法，挫败目标系统安全控制措施，取得访问控制权，并发现具备业务影响后果安全隐患的一种安全测试与评估方式。
+        </p>
+        <p class="lead" style="text-indent:2em">
+          渗透测试过程一般需要对目标系统进行主动探测分析，以发现潜在的系统漏洞，包括不恰当的系统配置，已知或未知的软硬件漏洞，以及在安全计划与响应过程中的操作性弱点等。而这一过程需要以攻击者的角度进行实施，通常涉及对大量发现安全漏洞的主动渗透与入侵攻击。渗透测试中发现的所有安全问题，他们所带来的业务影响后果评估，以及如何避免这些问题的技术解决方案，将在最终报告中呈现给目标系统的拥有者，帮助他们修补并提升系统的安全性。
+        </p>
+        <p class="lead" style="text-indent:2em">
+          信息收集是渗透测试的最重要的阶段，占据整个渗透测试的60%，可见信息收集的重要性。根据收集的有用信息，可以大大提高我们渗透测试的成功率。
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>
+                Freebuf
+              </h3>
+              <p class="lead" style="text-indent:2em">
+                FreeBuf,国内领先的互联网安全新媒体,同时也是爱好者们交流与分享安全技术的社区。
+                <p>
+                  <a class="btn btn-primary" href="https://www.freebuf.com/" target="_blank">查看更多</a>
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>
+                安全客
+              </h3>
+              <p class="lead" style="text-indent:2em">
+                有思想的安全新媒体。
+              </p>
+              <br><br><br>
+              <p>
+                <a class="btn btn-primary" href="https://www.anquanke.com/" target="_blank">查看更多</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>
+                爱春秋
+              </h3>
+              <p class="lead" style="text-indent:2em">
+                i春秋(www.ichunqiu.com)专注网络安全、信息安全、白帽子技术的在线学习,教育、培训的平台。
+                <p>
+                  <a class="btn btn-primary" href="https://www.ichunqiu.com/" target="_blank">查看更多</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

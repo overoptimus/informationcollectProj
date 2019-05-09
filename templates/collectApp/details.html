@@ -1,0 +1,22 @@
+{% extends 'collectApp/base.html' %}
+
+{% block main %}
+<br><br>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="btn-group">
+				<a class="btn btn-default" href="{% url 'collectApp:listdetail' %}"><em class="glyphicon glyphicon-align-left"></em> 目录扫描</a>
+				<a class="btn btn-default" href="{% url 'collectApp:cmsdetail' %}"><em class="glyphicon glyphicon-align-left"></em> 网站类型检测</a>
+				<a class="btn btn-default" href="{% url 'collectApp:portdetail' %}"><em class="glyphicon glyphicon-align-left"></em> 端口扫描</a>
+				<a class="btn btn-default" href="{% url 'collectApp:subdomindetail' %}"><em class="glyphicon glyphicon-align-left"></em> 子域名查询</a>
+			</div>
+			<br><br>
+			<div class="jumbotron">
+				{% block detail %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

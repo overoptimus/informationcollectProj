@@ -1,0 +1,26 @@
+{% extends 'collectApp/details.html' %}
+
+{% block detail %}
+<h1>
+  子域名查询详情页
+</h1>
+<p class="lead" style="text-indent:2em">
+  子域名（或子域；英语：Subdomain）是在域名系统等级中，属于更高一层域的域。比如，mail.example.com
+  和calendar.example.com是example.com的两个子域，而example.com则是顶级域.com的子域。
+</p>
+<p class="lead" style="text-indent:2em">
+  顶级域名（一级域名或父域名）是".com"、".net"、".org"、".cn"等等。
+</p>
+<p class="lead" style="text-indent:2em">
+  根据的国际互联网域名体系，国际顶级域名分为两类：类别顶级域名(gTLD)和地理顶级域名(ccTLD)两种。类
+  别顶级域名是以".com"、".net"、".org"、".info"等结尾的域名，均由国外公司负责管理。地理顶级域名是
+  以国家或地区代码为结尾的域名，如".cn"代表中国，".uk"代表英国，地理顶级域名一般由各个国家或地区负
+  责管理。
+</p>
+<p class="lead" style="text-indent:2em">
+  大型网站会有很多自站点，为了强调自站点的独立性，一般的做法是在二级域名上设置子域名，例如在testfi
+  re.net域名中设置一个子域名demo.testfire.net。将此类子域名枚举出来，对了解网站总体架构、业务应用
+  等非常有帮助。
+</p>
+
+{% endblock %}
