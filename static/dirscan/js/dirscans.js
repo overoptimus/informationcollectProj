@@ -1,8 +1,7 @@
 var table = new Vue({
   el: '#table',
   data: {
-    list: '',
-    i: 0,
+    list: []
   }
 });
 
@@ -23,6 +22,9 @@ var form = new Vue({
     },
 
     getlist: function() {
+      while(table.list.length>0){
+        table.list.pop();
+      }
       console.log(this.domainName);
       console.log(this.file_ext);
       this.$http.post("/dirscan/startdirscan/", {
@@ -31,33 +33,15 @@ var form = new Vue({
       }, {
         emulateJSON: true
       }).then(function(response) {
-        table.list = response.body.list
-        console.log('ajax成功: ' + response.body.list[0].url + response.body.list[0].status);
+        // table.list = response.body.list
+        // console.log('ajax成功: ' + response.body.list[0].url + response.body.list[0].status);
+        list = response.body.list;
+        for(i = 0;i<list.length;i++){
+          table.list.push(list[i]);
+        }
+        // table.list.push(list)
       });
     }
   }
 });
 
-
-
-// new Vue({
-//     el: '#test',
-//     data: {
-//       message: 'test'
-//     }
-//   })
-
-
-
-// {'file_ext':
-// {'file_ext':
-// {'file_ext':
-// {'file_ext':
-// {'file_ext':
-//
-//
-// }
-// }
-// }
-// }
-// }

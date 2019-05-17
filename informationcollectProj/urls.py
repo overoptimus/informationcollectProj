@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('collectApp.urls', namespace='collectApp')),
     path('dirscan/', include('dirscan.urls', namespace='dirscan')),
     path('cmsdistinguish/', include('cmsdistinguish.urls', namespace='cmsdistinguish')),
+    path('protscan', include('portscan.urls', namespace='portscan')),
 ]

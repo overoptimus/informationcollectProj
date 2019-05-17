@@ -5,7 +5,7 @@ from . import dirscan as dirscanutil
 
 # Create your views here.
 def dirscan(request):
-    return render(request, 'dirscan/dirscan.html')
+    return render(request, 'dirscan//dirscan.html')
 
 
 @csrf_exempt

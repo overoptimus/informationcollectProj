@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'collectApp',
     'dirscan',
     'cmsdistinguish',
+    'portscan',
 ]
 
 MIDDLEWARE = [
