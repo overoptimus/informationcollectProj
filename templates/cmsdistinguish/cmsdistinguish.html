@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 
 {% block main %}
-<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js" xmlns:v-bind="http://www.w3.org/1999/xhtml"></script>
 <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
 
 <div class="container">
@@ -27,13 +27,6 @@
                 <input type="button" class="btn btn-default" id="btn" v-on:click="cms_getlist" value="识别一下" />
               </span>
             </div>
-              {% verbatim %}
-              <div id="cmsresult">
-                <table>
-                    <tr v-></tr>
-                </table>
-              </div>
-              {% endverbatim %}
             <!--   -->
             <!-- <div class="btn-group form-group">
               <button class="btn btn-default">扫描类型</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
@@ -53,6 +46,17 @@
 					  </div> -->
 
           </form>
+
+            {% verbatim %}
+            <br><br>
+              <div id="cmsresult" v-if="hasResult == 1">
+                <div class="panel panel-success">
+                <div class="panel-heading">
+                    CMS：{{ cmsType }}
+                </div>
+			    </div>
+              </div>
+              {% endverbatim %}
         </div>
         <div class="col-md-3 column">
         </div>

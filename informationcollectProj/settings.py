@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dirscan',
     'cmsdistinguish',
     'portscan',
+    'subdomainscan',
 ]
 
 MIDDLEWARE = [

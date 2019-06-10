@@ -1,0 +1,109 @@
+{% extends 'collectApp/base.html' %}
+{% load static from staticfiles %}
+
+{% block main %}
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					子域名扫描
+				</h1>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-3 column">
+				</div>
+				<div class="col-md-6 column">
+					<form role="form" action="" id="form">
+						<div class="form-group">
+							<label for="domainName">域名</label><input placeholder="请输入一级域名比如:qq.com" type="text" class="form-control" id="domainName" v-model="domainName" />
+						</div>
+{#                        <div class="form-group">#}
+{#                            	{% verbatim %}#}
+{#							    <label for="file_ext">查询页数</label><select id='pages' class="form-control" name="pages" v-model="pages">#}
+{#								<option value="">请选择查询页数（每页10个子域名）</option>#}
+{#								<option v-for="item in items" :value="item">{{item}}</option>#}
+{#								{% endverbatim %}#}
+{##}
+{#							</select>#}
+{#                        </div>#}
+						<!--   -->
+                        <!-- <div class="btn-group form-group">
+              <button class="btn btn-default">扫描类型</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+					  	<ul class="dropdown-menu">
+						  	<li>
+							  	 <a href="#">操作</a>
+							  </li>
+						  	<li class="disabled">
+							  	 <a href="#">另一操作</a>
+							  </li>
+							  <li class="divider">
+							  </	li>
+							  <li>
+								   <a href="#">其它</a>
+							  </li>
+						  </ul>
+					  </div> -->
+						<input type="button" class="btn btn-default" id="btn" v-on:click="getList" value="开始查询" />
+
+					</form>
+				</div>
+				<div class="col-md-3 column">
+				</div>
+			</div>
+			<table class="table table-condensed" id="table">
+				<thead>
+					<tr v-if="list.length != 0">
+						<th>
+							编号
+						</th>
+{#						<th>#}
+{#							标题#}
+{#						</th>#}
+						<th>
+							子域名
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--
+					 v-if="item.status === '200'"
+						这里的v-if还要再改，能够实现根据当前item.status的值来绑定class属性success、error、warning、info
+				 -->
+					{% verbatim %}
+                    <!--<tr v-if="list.length == 0">
+                        <td colspan="3">当前列表无数据</td>
+                    </tr>-->
+					<tr v-for="(item, index) in list" v-bind:class="{success: item.status == 200, error: item.status == 404}">
+						<td>{{index}}</td>
+						<td>{{item}}</td>
+					</tr>
+					{% endverbatim %}
+					<tr class="success">
+
+					</tr>
+					<tr class="error">
+
+					</tr>
+					<tr class="warning">
+
+					</tr>
+					<tr class="info">
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+<!-- <div id="test">
+	{% verbatim %}
+	{{message}}
+	{% endverbatim %}
+</div> -->
+<script src="{% static 'subdomainscan/js/subdomainscan.js' %}"></script>
+{% endblock %}

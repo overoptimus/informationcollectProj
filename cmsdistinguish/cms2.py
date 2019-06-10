@@ -29,6 +29,7 @@ class gwhatweb(object):
         # for i in webdata:
         #     self.tasks.put(i)
         # fp.close()
+        self.resultList = []
         print("webdata total:%d" % len(webdata))
 
     def _GetMd5(self, body):
@@ -42,6 +43,10 @@ class gwhatweb(object):
 
     def _worker(self):
         data = self.tasks.get()
+        if self.url.startswith('http://') or self.url.startswith('https://'):
+            pass
+        else:
+            self.url = 'http://' + self.url
         test_url = self.url + data["url"]
         print(test_url)
         rtext = ''
@@ -56,7 +61,7 @@ class gwhatweb(object):
             rtext = ''
 
         if data["re"]:
-            print('开始执行判断' + str(rtext.find(data['re'])))
+            # print('开始执行判断' + str(rtext.find(data['re'])))
             if (rtext.find(data["re"]) != -1):
                 cms = data["name"]
                 result = {
@@ -78,7 +83,7 @@ class gwhatweb(object):
                     're': data['re']
                 }
                 self.resultList.append(result)
-                print("CMS:%s Judge:%s md5:%s" %(result, test_url, data["md5"]))
+                print("CMS:%s Judge:%s md5:%s" % (result, test_url, data["md5"]))
                 self._clearQueue()
                 return True
 
