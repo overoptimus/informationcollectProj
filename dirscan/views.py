@@ -20,7 +20,7 @@ def startdirscan(request):
         db_dir_list = db_domain.dir_detail_set.all()
         for dir_detail in db_dir_list:
             dir_dict = {
-                'url': dir_detail.domain.domain,
+                'url': dir_detail.dir,
                 'status': dir_detail.status
             }
             dir_list.append(dir_dict)

@@ -15,7 +15,7 @@ from threading import Thread, activeCount
 
 class gwhatweb(object):
     thread_num = 40
-    resultList = []
+    # resultList = []
 
     def __init__(self, url):
         self.tasks = queue.Queue()

@@ -7,7 +7,7 @@ from urllib.parse import urlparse, urljoin
 # global url
 url = ''
 file_ext = ''
-status_codes = [200, 403, 404, 302, 301]
+status_codes = [200, 403, 302, 301]
 webdict = 'static\dirscan\dics\dirs.txt'
 result = []
 queue = queue.Queue()

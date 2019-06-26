@@ -19,7 +19,7 @@ class Dir_domain_manager(models.Manager):
 
 class Dir_domain(models.Model):
     objects = Dir_domain_manager()
-    domain = models.CharField(max_length=20)
+    domain = models.CharField(max_length=100)
     file_ext = models.CharField(max_length=6)
     createtime = models.DateField(auto_now=True)
 
